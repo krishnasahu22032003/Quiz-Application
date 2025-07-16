@@ -1,0 +1,190 @@
+/* style.css */
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.quiz-container {
+  background: rgba(30, 41, 59, 0.95);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+  width: 90%;
+  max-width: 600px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #38bdf8;
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+select, button {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.5rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+button {
+  background: linear-gradient(to right, #3b82f6, #6366f1);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #60a5fa;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  background: #334155;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+li:hover {
+  background: #475569;
+  transform: scale(1.02);
+}
+
+li.selected {
+  border: 2px solid #3b82f6;
+  background: #1e40af;
+}
+
+li.correct {
+  background: #16a34a !important;
+}
+
+li.incorrect {
+  background: #dc2626 !important;
+}
+
+.quiz-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.progress-wrapper {
+  width: 100%;
+  background: #475569;
+  height: 8px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #3b82f6;
+  width: 0%;
+  transition: width 0.3s ease-in-out;
+}
+
+.circle-timer {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 80px;
+  height: 80px;
+}
+
+.circle-timer svg {
+  width: 80px;
+  height: 80px;
+  transform: rotate(-90deg);
+}
+
+circle {
+  fill: none;
+  stroke-width: 8;
+  r: 30;
+  cx: 40;
+  cy: 40;
+}
+
+circle:first-child {
+  stroke: #1e293b;
+}
+
+#timerCircle {
+  stroke: #3b82f6;
+  stroke-dasharray: 188.4;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1s linear;
+}
+
+#timerText {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 600px) {
+  .quiz-container {
+    padding: 1rem;
+  }
+
+  .circle-timer {
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 60px;
+    height: 60px;
+  }
+
+  #timerText {
+    font-size: 14px;
+    top: 22px;
+    left: 22px;
+  }
+}
