@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ultimate Quiz App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="quiz-container">
+    <!-- Start Screen -->
+    <div id="startScreen">
+      <h1>🚀 Start the Quiz</h1>
+      <label>Category:</label>
+      <select id="category">
+        <option value="18">Computer Science</option>
+        <option value="9">General Knowledge</option>
+        <option value="21">Sports</option>
+        <option value="23">History</option>
+        <option value="17">Science & Nature</option>
+      </select>
+
+      <label>Difficulty:</label>
+      <select id="difficulty">
+        <option value="easy">Easy</option>
+        <option value="medium" selected>Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+
+      <button id="startBtn">Start Quiz</button>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-wrapper hidden">
+      <div id="progressBar" class="progress-bar"></div>
+    </div>
+
+    <!-- Circular Timer -->
+    <div class="circle-timer hidden">
+      <svg>
+        <circle r="30" cx="40" cy="40"></circle>
+        <circle id="timerCircle" r="30" cx="40" cy="40"></circle>
+      </svg>
+      <span id="timerText">10</span>
+    </div>
+
+    <!-- Quiz Section -->
+    <div id="quiz" class="hidden">
+      <h2 id="question">Loading...</h2>
+      <ul id="choices"></ul>
+      <div class="quiz-footer">
+        <span id="questionNumber"></span>
+        <button id="nextBtn">Next</button>
+        <button id="viewResultsBtn" style="display: none;">View Results</button>
+      </div>
+    </div>
+
+    <!-- Results Section -->
+    <div id="results" class="hidden">
+      <h2>🎉 Results</h2>
+      <p id="scoreText"></p>
+      <ul id="summary"></ul>
+      <button id="restartBtn">Restart Quiz</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
